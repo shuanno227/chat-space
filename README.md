@@ -24,7 +24,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|group_title|string|null: false|
+|title|string|null: false|
 ### Association
 - has_many :messages
 - has_many :users, through: :groups_users
