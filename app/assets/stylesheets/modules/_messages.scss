@@ -1,0 +1,135 @@
+* {
+  box-sizing: border-box;
+}
+.wrapper {
+  display: flex;
+}
+.Sidebar {
+  @include box(100%, 300px);
+  background-color: #253141;
+  &__username {
+    @include box(100px, auto);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .topItems {
+      @include box(20px, 260px);
+      display: flex;
+      justify-content: space-between;
+      &__name {
+        @include font(#ffffff, 16px);
+        font-weight: bold;
+      }
+      &__list {
+        @include box(auto, 60px);
+        text-align: right;
+        &__icon {
+          color: #ffffff;
+          text-decoration: none;
+          margin: 0 0 0 5px;
+        }
+      }
+    }
+  }
+  &__grouplists {
+    @include box(calc(100vh - 100px),auto);
+    background-color: #2f3e51;
+    .groupList {
+      @include box(20px + 15px + 5px + 11px + 40px, 260px);
+      margin: 0 auto;
+      &__name {
+        @include font(#ffffff, 15px);
+        padding: 20px 0 5px 0;
+      }
+      &__message {
+        @include font(#ffffff, 11px);
+        padding-bottom: 40px;
+      }
+    }
+  }
+}
+.Mainbar{
+  @include box(100%, calc(100vw - 300px));
+  background-color: #ffffff;
+  &__groupBar {
+    @include box(100px, auto);
+    display: flex;
+    justify-content: space-between;
+    .groupInfo {
+      padding-left: 40px;
+      &__groupName {
+        @include font(#333333, 20px);
+        margin: 35px 0 15px 0;
+      }
+      &__groupMember {
+        @include font(#999999, 12px);
+      }
+    }
+    .editBtn {
+        @include box(40px, 72px);
+        @include font(#38aef0, 16px);
+        line-height: 40px;
+        border: 1px solid #38aef0;
+        display: block;
+        padding: 0 20px;
+        margin: 28px 40px 0 0;
+        text-decoration: none;
+    }
+  }
+  &__chat {
+    @include box(calc(100vh - 100px - 90px), auto);
+    background-color: #fafafa;
+    padding-top: 35px;
+    .chatBox {
+      margin: 0 0 46px 40px;
+      &__userBox {
+        display: flex;
+        margin-bottom: 12px;
+        &__name {
+          @include font(#333333, 16px);
+          font-weight: bold;
+        }
+        &__date {
+          @include font(#999999, 12px);
+        }
+      }
+      &__messageBox {
+        @include font(#434a54, 14px);
+      }
+    }
+  }
+  &__message-form {
+    @include box(90px, auto);
+    background-color: #d2d2d2;
+    display: flex;
+    align-items: center;
+    .form  {
+      display: flex;
+      padding: 0 40px;
+      @include box(auto, calc(100vw - 300px));
+      &__input {
+        @include box(50px, 100%);;
+        display: flex;
+        position: relative;
+        &__text {
+          @include box(auto, 100%);
+          padding: 0 10px;
+        }
+        &__icon {
+          position: absolute;
+          right: 10px;
+          line-height: 50px;
+          text-decoration: none;
+        }
+      }
+      &__btn {
+        @include box(50px, auto);
+        @include font(#ffffff, 16px);
+        background-color: #38aef0;
+        margin-left: 15px;
+        padding: 0 30px;
+        border: none;
+      }
+    }  
+  }
+}
