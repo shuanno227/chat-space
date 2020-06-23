@@ -1,25 +1,21 @@
 .Mainbar
   .Mainbar__groupBar
     .groupInfo
-      %p.groupInfo__groupName test
-      %p.groupInfo__groupMember Member：shuanno
-    = link_to 'Edit', '#', class: 'editBtn'
+      .groupInfo__groupName 
+        = @group.title
+      .groupInfo__groupMember 
+        Member：
+        - @group.users.each do |user|
+          = user.name
+    = link_to 'Edit', edit_group_path(@group), class: 'editBtn'
   .Mainbar__chat
-    - 3.times do
-      .chatBox
-        .chatBox__userBox
-          .chatBox__userBox__name
-            shuanno &nbsp;
-          .chatBox__userBox__date
-            2020/06/19(Fri) 15:00:00
-        .chatBox__messageBox
-          おはよう    
+    = render partial: 'message', collection: @messages
   .Mainbar__message-form
-    = form_with url: '#' do |form|
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |form|
       .form
         .form__input 
-          = form.text_field :content, placeholder: 'type a message', class: 'form__input__text'
-          %label{class: "form__input__icon"}
+          = form.text_field :text, placeholder: 'type a message', class: 'form__input__text'
+          = form.label :image, class: 'form__input__icon' do
             = icon('far', 'image')
-            %input{type: "file", style: "display:none;"}
+            = form.file_field :image, class: 'Hidden'
         = form.submit 'Send', class: 'form__btn'
