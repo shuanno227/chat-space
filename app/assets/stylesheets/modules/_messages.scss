@@ -120,6 +120,9 @@
           right: 10px;
           line-height: 50px;
           text-decoration: none;
+          .Hidden {
+            display: none;
+          }
         }
       }
       &__btn {

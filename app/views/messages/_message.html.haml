@@ -1,0 +1,12 @@
+.chatBox
+  .chatBox__userBox
+    .chatBox__userBox__name
+      = message.user.name 
+      &nbsp;
+    .chatBox__userBox__date
+      = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
+  .chatBox__messageBox
+    - if message.text.present?
+      %p.Message__text
+        = message.text
+    = image_tag message.image.url, class: 'Message__iamge' if message.image.present?
