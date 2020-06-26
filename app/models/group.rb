@@ -2,7 +2,7 @@ class Group < ApplicationRecord
   has_many :group_users
   has_many :users, through: :group_users
   has_many :messages
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true, uniqueness: true, uniqueness: { case_sensitive:  true }
 
   def show_last_message
     if (last_message = messages.last).present?
