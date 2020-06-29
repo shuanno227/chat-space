@@ -80,6 +80,7 @@
     @include box(calc(100vh - 100px - 90px), auto);
     background-color: #fafafa;
     padding-top: 35px;
+    overflow: scroll;
     .chatBox {
       margin: 0 0 46px 40px;
       &__userBox {
