@@ -2,7 +2,7 @@ $(function(){
 
   function buildHTML(message){
     if (message.image){
-      let html = `<div class="chatBox">
+      let html = `<div class="chatBox" data-message-id=${message.id}>
                     <div class="chatBox__userBox">
                       <div class="chatBox__userBox__name">
                         ${message.user_name}
@@ -21,7 +21,7 @@ $(function(){
                   </div>`
       return html;
     }else{
-      let html = `<div class="chatBox">
+      let html = `<div class="chatBox" data-message-id=${message.id}>
                     <div class="chatBox__userBox">
                       <div class="chatBox__userBox__name">
                         ${message.user_name}
@@ -64,6 +64,6 @@ $(function(){
     })
     .always(function(data){
       $('.form__btn').prop('disabled', false);
-    });
+    })
   })
 });
