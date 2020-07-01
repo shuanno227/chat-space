@@ -4,13 +4,8 @@ worker_processes 1
 # currentを指定
 working_directory "#{app_path}/current"
 
-# それぞれ、sharedの中を参照するよう変更
-
-pid "#{app_path}/shared/tmp/pids/unicorn.pid"
-
-
 #Unicornの起動に必要なファイルの設置場所を指定
-pid "#{app_path}/tmp/pids/unicorn.pid"
+pid "#{app_path}/shared/tmp/pids/unicorn.pid"
 
 #ポート番号を指定
 listen "#{app_path}/shared/tmp/sockets/unicorn.sock"
