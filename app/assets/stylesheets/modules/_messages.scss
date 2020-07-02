@@ -7,6 +7,7 @@
 .Sidebar {
   @include box(100%, 300px);
   background-color: #253141;
+  
   &__username {
     @include box(100px, auto);
     display: flex;
@@ -34,16 +35,22 @@
   &__grouplists {
     @include box(calc(100vh - 100px),auto);
     background-color: #2f3e51;
-    .groupList {
+    overflow: scroll;
+    .group {
       @include box(20px + 15px + 5px + 11px + 40px, 260px);
       margin: 0 auto;
-      &__name {
-        @include font(#ffffff, 15px);
-        padding: 20px 0 5px 0;
-      }
-      &__message {
-        @include font(#ffffff, 11px);
-        padding-bottom: 40px;
+      .groupList{
+        text-decoration: none;
+        &__name {
+          @include font(#ffffff, 15px);
+          padding: 20px 0 5px 0;
+          
+        }
+        &__message {
+          @include font(#ffffff, 11px);
+          padding-bottom: 40px;
+         
+        }
       }
     }
   }

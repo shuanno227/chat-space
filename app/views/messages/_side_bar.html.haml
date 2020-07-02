@@ -11,8 +11,8 @@
           = icon('fas', 'cog')
   .Sidebar__grouplists
     - current_user.groups.each do |group|
-      .groupList
-        = link_to group_messages_path(group) do
+      .group
+        = link_to group_messages_path(group), class: "groupList" do
           .groupList__name
             = group.title  
           .groupList__message
